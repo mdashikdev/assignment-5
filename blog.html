@@ -1,11 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
-</head>
-<body>
-    
-</body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Lexend", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="bg-yellow-50/50 py-4 pb-6 sticky top-0 z-20 backdrop-blur-md">
+      <div
+        class="w-10/12 mx-auto flex flex-col md:flex-row gap-2 justify-between items-center"
+      >
+        <a
+          href="index.html"
+          class="bg-lime-300 rounded-md py-2 cursor-pointer hover:scale-95 duration-150 px-6"
+        >
+          Home
+        </a>
+        <div class="flex gap-2 items-center justify-center font-bold text-lg">
+          <img src="assets/logo.png" alt="" />
+          <h2>Donate Bangladesh</h2>
+        </div>
+        <div class="flex gap-2 items-center justify-center">
+          <img src="assets/coin.png" alt="" />
+          <h2 id="myBalance">98600BDT</h2>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="flex flex-col gap-3 w-10/12 lg:max-w-[1080px] mx-auto py-12"
+    >
+      <h2 class="text-5xl font-extrabold">Important FAQ</h2>
+      <div class="collapse collapse-plus bg-base-200 mt-5">
+        <input type="radio" name="my-accordion-3" checked="checked" />
+        <div class="collapse-title text-xl font-medium">
+          What is the document object model (DOM)
+        </div>
+        <div class="collapse-content">
+          <p>
+            The Document Object Model (DOM) is a programming interface that
+            represents an HTML document as a tree structure. It provides methods
+            to access and manipulate elements, attributes, and text content of
+            the document.
+          </p>
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-base-200">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-xl font-medium">
+          How do you select an element from the DOM?
+        </div>
+        <div class="collapse-content">
+          <p>
+            To select an element from the DOM, i can use JavaScript's
+            getElementById() method by specifying the element's unique ID.
+            Alternatively, i can use the querySelector() method with a CSS
+            selector to find elements based on various criteria.
+          </p>
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-base-200">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-xl font-medium">
+          What is event delegation in the context of the DOM and why is it
+          useful?
+        </div>
+        <div class="collapse-content">
+          <p>
+            Event delegation involves attaching an event listener to a parent
+            element and then using event bubbling to handle events that occur on
+            its child elements. This is useful because it allows you to
+            efficiently handle events for multiple elements without having to
+            attach individual listeners to each one.
+          </p>
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-base-200">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-xl font-medium">
+          How do you manipulate and element's attributes and styles using the
+          DOM?
+        </div>
+        <div class="collapse-content">
+          <p>
+            To manipulate an element's attributes, i can use setAttribute() and
+            getAttribute() methods. To modify its styles, i can access the
+            element's style property and set individual CSS properties directly
+            or use the classList property to add or remove CSS classes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const draftBalance = JSON.parse(localStorage.getItem("balance"));
+
+      if (draftBalance === 0 || draftBalance > 0) {
+        document.getElementById("myBalance").innerText = draftBalance + " BDT";
+      }
+    </script>
+  </body>
 </html>

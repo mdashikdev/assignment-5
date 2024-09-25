@@ -40,6 +40,7 @@ if (draftBalance === 0 || draftBalance > 0) {
   document.getElementById("myBalance").innerText = draftBalance + " BDT";
 }
 
+
 document.querySelectorAll(".donateNowBtn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const donationAmount =
